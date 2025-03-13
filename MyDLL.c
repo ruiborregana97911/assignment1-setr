@@ -65,7 +65,39 @@ void MyDLLInsert(list *dll, uint16_t key, const char *data) {
     dll->count++;
 }
 
-void MyDLLRemove(list *dll, uint16_t id){}
+void MyDLLRemove(list *dll, uint16_t id) {
+    int index = -1;
+    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+        if (dll->available[i] == 0 && dll->nodelist[i].key == id) {
+            index = i;
+            break;
+        }
+    }
+    
+    if (index == -1) {
+        printf("Node with key %d not found.\n", id);
+        return;
+    }
+    
+    // Adjust pointers
+    if (dll->nodelist[index].prev != -1) {
+        dll->nodelist[dll->nodelist[index].prev].next = dll->nodelist[index].next;
+    } else {
+        dll->head = dll->nodelist[index].next;
+    }
+    
+    if (dll->nodelist[index].next != -1) {
+        dll->nodelist[dll->nodelist[index].next].prev = dll->nodelist[index].prev;
+    } else {
+        dll->tail = dll->nodelist[index].prev;
+    }
+    
+    // Mark as available
+    dll->available[index] = 1;
+    dll->count--;
+    printf("Node with key %d removed.\n", id);
+}
+
 
 char* MyDLLFind(list *dll, uint16_t id){}
 

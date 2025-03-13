@@ -18,16 +18,10 @@ int main() {
     MyDLLInit(&myList);
 
     // Check if initialization was successful
+    printf("Initial state:\n");
     printf("Head: %d\n", myList.head);
     printf("Tail: %d\n", myList.tail);
     printf("Count: %d\n", myList.count);
-    
-    // Check available nodes
-    printf("Available nodes: ");
-    for (int i = 0; i < MAX_SIZE_NODE; i++) {
-        printf("%d ", myList.available[i]);
-    }
-    printf("\n");
     
     // Insert test nodes
     MyDLLInsert(&myList, 10, "ola");
@@ -35,7 +29,25 @@ int main() {
     MyDLLInsert(&myList, 30, "dia");
     
     // Print list state after insertions
-    printf("After insertions:\n");
+    printf("\nAfter insertions:\n");
+    printf("Head: %d\n", myList.head);
+    printf("Tail: %d\n", myList.tail);
+    printf("Count: %d\n", myList.count);
+    
+    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+        if (myList.available[i] == 0) {
+            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
+                   i, myList.nodelist[i].key, myList.nodelist[i].data,
+                   myList.nodelist[i].prev, myList.nodelist[i].next);
+        }
+    }
+    
+    // Remove a node
+    printf("\nRemoving Node with key 20...\n");
+    MyDLLRemove(&myList, 20);
+    
+    // Print list state after removal
+    printf("\nAfter removal:\n");
     printf("Head: %d\n", myList.head);
     printf("Tail: %d\n", myList.tail);
     printf("Count: %d\n", myList.count);
