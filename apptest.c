@@ -29,5 +29,24 @@ int main() {
     }
     printf("\n");
     
+    // Insert test nodes
+    MyDLLInsert(&myList, 10, "ola");
+    MyDLLInsert(&myList, 20, "bom");
+    MyDLLInsert(&myList, 30, "dia");
+    
+    // Print list state after insertions
+    printf("After insertions:\n");
+    printf("Head: %d\n", myList.head);
+    printf("Tail: %d\n", myList.tail);
+    printf("Count: %d\n", myList.count);
+    
+    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+        if (myList.available[i] == 0) {
+            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
+                   i, myList.nodelist[i].key, myList.nodelist[i].data,
+                   myList.nodelist[i].prev, myList.nodelist[i].next);
+        }
+    }
+    
     return 0;
 }
