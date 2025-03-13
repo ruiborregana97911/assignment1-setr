@@ -12,7 +12,18 @@
 #include <stdlib.h>
 
 
-void MyDLLInit(list *dll){}
+
+
+void MyDLLInit(list *dll) {
+    dll->head = -1;
+    dll->tail = -1;
+    dll->count = 0;
+    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+        dll->nodelist[i].prev = -1;
+        dll->nodelist[i].next = -1;
+        dll->available[i] = 1;  // Mark all nodes as available
+    }
+}
 
 void MyDLLInsert(list *dll, uint16_t key, const char *data){}
 

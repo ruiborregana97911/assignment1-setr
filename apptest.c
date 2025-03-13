@@ -11,9 +11,23 @@
 #include "MyDLL.h"
 #include <string.h>
 #include <stdio.h>
-int main(){
-	
-	printf("apptest runned");
-	
-	return 1;
-	}
+
+
+int main() {
+    list myList;
+    MyDLLInit(&myList);
+
+    // Check if initialization was successful
+    printf("Head: %d\n", myList.head);
+    printf("Tail: %d\n", myList.tail);
+    printf("Count: %d\n", myList.count);
+    
+    // Check available nodes
+    printf("Available nodes: ");
+    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+        printf("%d ", myList.available[i]);
+    }
+    printf("\n");
+    
+    return 0;
+}
