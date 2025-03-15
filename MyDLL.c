@@ -107,7 +107,7 @@ char* MyDLLFind(list *dll, uint16_t id){
 		}
 	}
 
-	return NULL;
+	return "ERROR: key not found!";
 }
 
 char* MyDLLFindNext(list *dll, uint16_t id){
@@ -119,11 +119,11 @@ char* MyDLLFindNext(list *dll, uint16_t id){
 				if(next_id != -1){
 					return dll->nodelist[next_id].data;
 				}
-				return NULL;
+				return "ERROR: No next node!";
 			}
 		}
 		
-	return NULL;
+	return "ERROR: key not found!";
 }
 
 char* MyDLLFindPrevious(list *dll, uint16_t id){
@@ -135,9 +135,9 @@ char* MyDLLFindPrevious(list *dll, uint16_t id){
 				if(prev_id != -1){
 					return dll->nodelist[prev_id].data;
 				}
-				return NULL;
+				return "ERROR: No previous node!";
 			}
 		}
 	
-	return NULL;
+	return "ERROR: key not found!";
 }

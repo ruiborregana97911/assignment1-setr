@@ -68,15 +68,13 @@ int main() {
     
     
     printf("\nFinding Node with key ??..\n");
-    char *data_tst = MyDLLFind(&myList, 100);
+    char *data_tst = MyDLLFind(&myList, 1000);
     
     if(data_tst != NULL){
 		printf("Node data: %s\n", data_tst);
 		}
-    else{
-		printf("Node not found!\n");
-		}
-    
+
+
     // Print list state after insertions
     printf("\nAfter insertions:\n");
     printf("Head: %d\n", myList.head);
@@ -92,18 +90,20 @@ int main() {
     }
     
     
-    //data_tst = MyDLLFindNext(&myList, 400);
-    data_tst = MyDLLFindPrevious(&myList, 10);
+    data_tst = MyDLLFindNext(&myList, 400);
+   
     
     printf("\n");
     if(data_tst != NULL){
 		printf("Node data: %s\n", data_tst);
 		}
-    else{
-		printf("Node not found!\n");
+
+	data_tst = MyDLLFindPrevious(&myList, 10);
+
+    printf("\n");
+    if(data_tst != NULL){
+		printf("Node data: %s\n", data_tst);
 		}
-    
-    
     
     return 0;
 }
