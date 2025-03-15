@@ -92,22 +92,22 @@ char* MyDLLFind(list *dll, uint16_t id);
  * @brief MyDLLFindNext returns a node from the Doubly Linked List
  *
  * This function searches for a node by its key and returns the data of the next node.
- * If the next node does not exist, it returns NULL.
+ * If the next node does not exist, it returns ERROR message.
  *
  * @param[in] *dll Pointer to the DLL
  * @param[in] id Identifier of the current node
- * @return Pointer to the data of the next node if it exists, NULL otherwise
+ * @return Pointer to the data of the next node if it exists, ERROR message otherwise
  */
 char* MyDLLFindNext(list *dll, uint16_t id);
 /**
  * @brief MyDLLFindPrevious returns a node from the Doubly Linked List
  *
  * This function searches for a node by its key and returns the data of the previous node.
- * If the previous node does not exist, it returns NULL.
+ * If the previous node does not exist, it returns ERROR message.
  *
  * @param[in] *dll Pointer to the DLL
  * @param[in] id Identifier of the current node
- * @return Pointer to the data of the previous node if it exists, NULL otherwise
+ * @return Pointer to the data of the previous node if it exists, ERROR message otherwise
  */
 char* MyDLLFindPrevious(list *dll, uint16_t id);
 
@@ -120,6 +120,13 @@ char* MyDLLFindPrevious(list *dll, uint16_t id);
  */
 void MyDLLDestroy(list *dll);
 
+/**
+ * @brief MyDLL_print shows all information inside the Doubly Linked List
+ * 
+ * @param[in] *dll Pointer to the DLL
+ */
+
+void MyDLL_print(list *dll);
 
 #endif
 

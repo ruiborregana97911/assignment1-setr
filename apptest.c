@@ -30,17 +30,7 @@ int main() {
     
     // Print list state after insertions
     printf("\nAfter insertions:\n");
-    printf("Head: %d\n", myList.head);
-    printf("Tail: %d\n", myList.tail);
-    printf("Count: %d\n", myList.count);
-    
-    for (int i = 0; i < myList.max_size_node; i++) {
-        if (myList.available[i] == 0) {
-            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
-                   i, myList.nodelist[i].key, myList.nodelist[i].data,
-                   myList.nodelist[i].prev, myList.nodelist[i].next);
-        }
-    }
+    MyDLL_print(&myList);
     
     // Remove a node
     printf("\nRemoving Node with key 20...\n");
@@ -48,17 +38,7 @@ int main() {
     
     // Print list state after removal
     printf("\nAfter removal:\n");
-    printf("Head: %d\n", myList.head);
-    printf("Tail: %d\n", myList.tail);
-    printf("Count: %d\n", myList.count);
-    
-    for (int i = 0; i < myList.max_size_node; i++) {
-        if (myList.available[i] == 0) {
-            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
-                   i, myList.nodelist[i].key, myList.nodelist[i].data,
-                   myList.nodelist[i].prev, myList.nodelist[i].next);
-        }
-    }
+    MyDLL_print(&myList);
     
     
     // Insert test nodes
@@ -77,17 +57,7 @@ int main() {
 
     // Print list state after insertions
     printf("\nAfter insertions:\n");
-    printf("Head: %d\n", myList.head);
-    printf("Tail: %d\n", myList.tail);
-    printf("Count: %d\n", myList.count);
-    
-    for (int i = 0; i < myList.max_size_node; i++) {
-        if (myList.available[i] == 0) {
-            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
-                   i, myList.nodelist[i].key, myList.nodelist[i].data,
-                   myList.nodelist[i].prev, myList.nodelist[i].next);
-        }
-    }
+	MyDLL_print(&myList);
     
     
     data_tst = MyDLLFindNext(&myList, 400);
@@ -106,15 +76,13 @@ int main() {
 		}
 		
 		
+	MyDLL_print(&myList);	
+		
+		
 	MyDLLDestroy(&myList);	
     
-      for (int i = 0; i < myList.max_size_node; i++) {
-        if (myList.available[i] == 0) {
-            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
-                   i, myList.nodelist[i].key, myList.nodelist[i].data,
-                   myList.nodelist[i].prev, myList.nodelist[i].next);
-        }
-    }
+    printf("\n");
+	MyDLL_print(&myList);
     
     return 0;
 }

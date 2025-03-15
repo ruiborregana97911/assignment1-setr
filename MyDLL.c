@@ -162,6 +162,20 @@ void MyDLLDestroy(list *dll){
 	
 }
 
-
+void MyDLL_print(list *dll){
+		
+	printf("Head: %d\n", dll->head);
+    printf("Tail: %d\n", dll->tail);
+    printf("Count: %d\n", dll->count);
+    
+    for (int i = 0; i < dll->max_size_node; i++) {
+        if (dll->available[i] == 0) {
+            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
+                   i, dll->nodelist[i].key, dll->nodelist[i].data,
+                   dll->nodelist[i].prev, dll->nodelist[i].next);
+        }
+    }	
+		
+}
 
 
