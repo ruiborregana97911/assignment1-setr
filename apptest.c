@@ -15,7 +15,7 @@
 
 int main() {
     list myList;
-    MyDLLInit(&myList);
+    MyDLLInit(&myList, 10, 20);
 
     // Check if initialization was successful
     printf("Initial state:\n");
@@ -34,7 +34,7 @@ int main() {
     printf("Tail: %d\n", myList.tail);
     printf("Count: %d\n", myList.count);
     
-    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+    for (int i = 0; i < myList.max_size_node; i++) {
         if (myList.available[i] == 0) {
             printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
                    i, myList.nodelist[i].key, myList.nodelist[i].data,
@@ -52,7 +52,7 @@ int main() {
     printf("Tail: %d\n", myList.tail);
     printf("Count: %d\n", myList.count);
     
-    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+    for (int i = 0; i < myList.max_size_node; i++) {
         if (myList.available[i] == 0) {
             printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
                    i, myList.nodelist[i].key, myList.nodelist[i].data,
@@ -81,7 +81,7 @@ int main() {
     printf("Tail: %d\n", myList.tail);
     printf("Count: %d\n", myList.count);
     
-    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+    for (int i = 0; i < myList.max_size_node; i++) {
         if (myList.available[i] == 0) {
             printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
                    i, myList.nodelist[i].key, myList.nodelist[i].data,

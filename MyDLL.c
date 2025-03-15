@@ -14,26 +14,36 @@
 
 
 
-void MyDLLInit(list *dll) {
+void MyDLLInit(list *dll, uint16_t node_size, uint16_t data_size) {
+    
+    dll->max_size_node = node_size;
+    dll->max_size_data = data_size;
+    
+    dll->nodelist = malloc(node_size * sizeof(node));
+    dll->available = malloc(node_size * sizeof(int));
+    
+    for(int i=0; i < node_size; i++){
+		dll->nodelist[i].prev = -1;
+        dll->nodelist[i].next = -1;
+        dll->available[i] = 1;  // Mark all nodes as available
+        dll->nodelist[i].data = malloc(data_size * sizeof(char));
+	}
+    
     dll->head = -1;
     dll->tail = -1;
     dll->count = 0;
-    for (int i = 0; i < MAX_SIZE_NODE; i++) {
-        dll->nodelist[i].prev = -1;
-        dll->nodelist[i].next = -1;
-        dll->available[i] = 1;  // Mark all nodes as available
-    }
+
 }
 
 void MyDLLInsert(list *dll, uint16_t key, const char *data) {
-    if (dll->count >= MAX_SIZE_NODE) {
+    if (dll->count >= dll->max_size_node) {
         printf("List is full! Cannot insert new node.\n");
         return;
     }
     
     // Find an available index
     int index = -1;
-    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+    for (int i = 0; i < dll->max_size_node; i++) {
         if (dll->available[i] == 1) {
             index = i;
             break;
@@ -47,7 +57,7 @@ void MyDLLInsert(list *dll, uint16_t key, const char *data) {
     
     // Initialize the new node
     dll->nodelist[index].key = key;
-    strncpy(dll->nodelist[index].data, data, MAX_SIZE_DATA);
+    strncpy(dll->nodelist[index].data, data, dll->max_size_data);
     dll->nodelist[index].prev = -1;
     dll->nodelist[index].next = -1;
     dll->available[index] = 0; // Mark as occupied
@@ -67,7 +77,7 @@ void MyDLLInsert(list *dll, uint16_t key, const char *data) {
 
 void MyDLLRemove(list *dll, uint16_t id) {
     int index = -1;
-    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+    for (int i = 0; i < dll->max_size_node; i++) {
         if (dll->available[i] == 0 && dll->nodelist[i].key == id) {
             index = i;
             break;
@@ -101,7 +111,7 @@ void MyDLLRemove(list *dll, uint16_t id) {
 
 char* MyDLLFind(list *dll, uint16_t id){
 	
-	for(int i=0;i<MAX_SIZE_NODE;i++){
+	for(int i=0;i < dll->max_size_node;i++){
 		if(!dll->available[i] && dll->nodelist[i].key == id){
 			return dll->nodelist[i].data;
 		}
@@ -112,7 +122,7 @@ char* MyDLLFind(list *dll, uint16_t id){
 
 char* MyDLLFindNext(list *dll, uint16_t id){
 	
-		for(int i=0;i<MAX_SIZE_NODE;i++){
+		for(int i=0;i < dll->max_size_node;i++){
 			if(!dll->available[i] && dll->nodelist[i].key == id){
 				int16_t next_id = dll->nodelist[i].next;
 				
@@ -128,7 +138,7 @@ char* MyDLLFindNext(list *dll, uint16_t id){
 
 char* MyDLLFindPrevious(list *dll, uint16_t id){
 	
-		for(int i=0;i<MAX_SIZE_NODE;i++){
+		for(int i=0;i < dll->max_size_node;i++){
 			if(!dll->available[i] && dll->nodelist[i].key == id){
 				int16_t prev_id = dll->nodelist[i].prev;
 				

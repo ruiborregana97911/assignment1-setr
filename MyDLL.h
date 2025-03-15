@@ -10,17 +10,6 @@
 #ifndef _MyDLL_H
 #define _MyDLL_H
 
-/**
- * @def MAX_SIZE_DATA
- * @brief Maximum value assigned to the data array of each element
- */
-#define MAX_SIZE_DATA 64
-/**
- * @def MAX_SIZE_NODE
- * @brief Maximum number of elements assigned to the Doubly Linked List
- */
-#define MAX_SIZE_NODE 10
-
 #include <stdio.h>
 #include <stdint.h>
 
@@ -33,7 +22,7 @@
  */
 typedef struct {
     uint16_t key;              /**< Unique node identifier */
-    char data[MAX_SIZE_DATA];  /**< Data stored in the node */
+    char *data;  /**< Data stored in the node */
     int16_t prev;              /**< Key of the previous node (-1 for null) */
     int16_t next;              /**< Key of the next node (-1 for null) */
 } node;
@@ -46,11 +35,14 @@ typedef struct {
  * to track free nodes.
  */
 typedef struct {
-    node nodelist[MAX_SIZE_NODE]; /**< Array of nodes in the list */
+    node *nodelist; /**< Array of nodes in the list */
     int head;                     /**< Key of the first node in the DLL */
     int tail;                     /**< Key of the last node in the DLL */
     int count;                    /**< Number of nodes in the DLL */
-    int available[MAX_SIZE_NODE];  /**< Array to track free nodes (1 = free, 0 = occupied) */
+    int *available;  /**< Array to track free nodes (1 = free, 0 = occupied) */
+	uint16_t max_size_node;			/**< Maximum number of elements assigned to the Doubly Linked List*/
+	uint16_t max_size_data;			/**< Maximum value assigned to the data array of each element*/
+	
 } list;
 
 /**
@@ -60,8 +52,10 @@ typedef struct {
  * the node counter to zero, and marking all nodes as available.
  *
  * @param[in] *dll Pointer to the list
+ * @param[in] node_size Max number of elements of the DLL
+ * @param[in] data_size Max size of the data of DLL
  */
-void MyDLLInit(list *dll);
+void MyDLLInit(list *dll, uint16_t node_size, uint16_t data_size);
 /**
  * @brief MyDLLInsert adds an element to the Doubly Linked List
  *
