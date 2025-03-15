@@ -111,5 +111,15 @@ char* MyDLLFindNext(list *dll, uint16_t id);
  */
 char* MyDLLFindPrevious(list *dll, uint16_t id);
 
+/**
+ * @brief MyDLLDestroy frees the allocated memory of a spcific DLL
+ * 
+ * This funtion frees the memory allocated when funtion MyDLLInit() is called
+ * 
+ * @param[in] *dll Pointer to the DLL
+ */
+void MyDLLDestroy(list *dll);
+
+
 #endif
 

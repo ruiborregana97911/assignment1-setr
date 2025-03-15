@@ -151,3 +151,17 @@ char* MyDLLFindPrevious(list *dll, uint16_t id){
 	
 	return "ERROR: key not found!";
 }
+
+void MyDLLDestroy(list *dll){
+	
+	for(int i=0; i < dll->max_size_node; i++){
+		free(dll->nodelist[i].data);	
+	}	
+	free(dll->nodelist);
+	free(dll->available);
+	
+}
+
+
+
+

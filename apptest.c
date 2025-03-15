@@ -104,6 +104,17 @@ int main() {
     if(data_tst != NULL){
 		printf("Node data: %s\n", data_tst);
 		}
+		
+		
+	MyDLLDestroy(&myList);	
+    
+      for (int i = 0; i < myList.max_size_node; i++) {
+        if (myList.available[i] == 0) {
+            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
+                   i, myList.nodelist[i].key, myList.nodelist[i].data,
+                   myList.nodelist[i].prev, myList.nodelist[i].next);
+        }
+    }
     
     return 0;
 }
