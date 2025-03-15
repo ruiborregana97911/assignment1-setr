@@ -93,7 +93,7 @@ int main() {
     
     
     //data_tst = MyDLLFindNext(&myList, 400);
-    
+    data_tst = MyDLLFindPrevious(&myList, 10);
     
     printf("\n");
     if(data_tst != NULL){

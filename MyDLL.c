@@ -128,5 +128,16 @@ char* MyDLLFindNext(list *dll, uint16_t id){
 
 char* MyDLLFindPrevious(list *dll, uint16_t id){
 	
+		for(int i=0;i<MAX_SIZE_NODE;i++){
+			if(!dll->available[i] && dll->nodelist[i].key == id){
+				int16_t prev_id = dll->nodelist[i].prev;
+				
+				if(prev_id != -1){
+					return dll->nodelist[prev_id].data;
+				}
+				return NULL;
+			}
+		}
+	
 	return NULL;
 }
