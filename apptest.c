@@ -60,5 +60,27 @@ int main() {
         }
     }
     
+    
+    // Insert test nodes
+    MyDLLInsert(&myList, 100, "cem");
+    MyDLLInsert(&myList, 230, "douzentos e trinta");
+    MyDLLInsert(&myList, 400, "quatrocentos");
+    
+    
+    MyDLLRemove(&myList, 100);
+    
+    
+    
+    printf("\nFinding Node with key ??..\n");
+    char *data_tst = MyDLLFind(&myList, 100);
+    
+    if(data_tst != NULL){
+		printf("Node data: %s\n", data_tst);
+		}
+    else{
+		printf("Node not found!\n");
+		}
+    
+    
     return 0;
 }

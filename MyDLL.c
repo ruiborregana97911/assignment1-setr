@@ -99,8 +99,23 @@ void MyDLLRemove(list *dll, uint16_t id) {
 }
 
 
-char* MyDLLFind(list *dll, uint16_t id){}
+char* MyDLLFind(list *dll, uint16_t id){
+	
+	for(int i=0;i<MAX_SIZE_NODE;i++){
+		if(!dll->available[i] && dll->nodelist[i].key == id){
+			return dll->nodelist[i].data;
+			}
+		}
+	
+	return NULL;
+	}
 
-char* MyDLLFindNext(list *dll, uint16_t id){}
+char* MyDLLFindNext(list *dll, uint16_t id){
+	
+	return NULL;
+	}
 
-char* MyDLLFindPrevious(list *dll, uint16_t id){}
+char* MyDLLFindPrevious(list *dll, uint16_t id){
+	
+	return NULL;
+	}
