@@ -104,18 +104,29 @@ char* MyDLLFind(list *dll, uint16_t id){
 	for(int i=0;i<MAX_SIZE_NODE;i++){
 		if(!dll->available[i] && dll->nodelist[i].key == id){
 			return dll->nodelist[i].data;
-			}
 		}
-	
-	return NULL;
 	}
+
+	return NULL;
+}
 
 char* MyDLLFindNext(list *dll, uint16_t id){
 	
+		for(int i=0;i<MAX_SIZE_NODE;i++){
+			if(!dll->available[i] && dll->nodelist[i].key == id){
+				int16_t next_id = dll->nodelist[i].next;
+				
+				if(next_id != -1){
+					return dll->nodelist[next_id].data;
+				}
+				return NULL;
+			}
+		}
+		
 	return NULL;
-	}
+}
 
 char* MyDLLFindPrevious(list *dll, uint16_t id){
 	
 	return NULL;
-	}
+}

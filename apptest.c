@@ -67,10 +67,6 @@ int main() {
     MyDLLInsert(&myList, 400, "quatrocentos");
     
     
-    MyDLLRemove(&myList, 100);
-    
-    
-    
     printf("\nFinding Node with key ??..\n");
     char *data_tst = MyDLLFind(&myList, 100);
     
@@ -80,6 +76,33 @@ int main() {
     else{
 		printf("Node not found!\n");
 		}
+    
+    // Print list state after insertions
+    printf("\nAfter insertions:\n");
+    printf("Head: %d\n", myList.head);
+    printf("Tail: %d\n", myList.tail);
+    printf("Count: %d\n", myList.count);
+    
+    for (int i = 0; i < MAX_SIZE_NODE; i++) {
+        if (myList.available[i] == 0) {
+            printf("Node at index %d - Key: %d, Data: %s, Prev: %d, Next: %d\n",
+                   i, myList.nodelist[i].key, myList.nodelist[i].data,
+                   myList.nodelist[i].prev, myList.nodelist[i].next);
+        }
+    }
+    
+    
+    //data_tst = MyDLLFindNext(&myList, 400);
+    
+    
+    printf("\n");
+    if(data_tst != NULL){
+		printf("Node data: %s\n", data_tst);
+		}
+    else{
+		printf("Node not found!\n");
+		}
+    
     
     
     return 0;
