@@ -18,7 +18,12 @@ int main() {
     MyDLLInit(&myList, 5, 20);
 
     // Check if initialization was successful
-	printf("### Test 1: Initialization ###\n");
+	printf("\n### Test 1: Initialization and operations on a empty list ###\n\n");
+	
+	printf("Find(50): %s\n", MyDLLFind(&myList, 50));
+    printf("Removing key 50...\n");
+    MyDLLRemove(&myList, 50); 
+	
 	MyDLL_print(&myList);
     
     // Insert test nodes
@@ -70,7 +75,7 @@ int main() {
 
     
     // Testing removing elements that dont exist
-    printf("### Test 6: Removing non existent elements ###\n");
+    printf("\n### Test 6: Removing non existent elements ###\n");
     printf("\nRemoving Node with key 80\n");
     MyDLLRemove(&myList, 80);
     MyDLL_print(&myList);
@@ -81,6 +86,7 @@ int main() {
     MyDLLRemove(&myList, 30);
     
     MyDLL_print(&myList);
+    
     
     printf("### Test 8: Testing Limits of elements Insertion ###\n\n");
     MyDLLInsert(&myList, 44, "Maria");

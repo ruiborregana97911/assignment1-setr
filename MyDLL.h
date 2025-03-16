@@ -49,7 +49,8 @@ typedef struct {
  * @brief MyDLLInit initializes the Doubly Linked List
  *
  * This function initializes the list by setting the head and tail keys to -1,
- * the node counter to zero, and marking all nodes as available.
+ * the node counter to zero, and marking all nodes as available. This function
+ * sets the maximum number of elements in the list and also the maximum size for the data.
  *
  * @param[in] *dll Pointer to the list
  * @param[in] node_size Max number of elements of the DLL
@@ -112,7 +113,7 @@ char* MyDLLFindNext(list *dll, uint16_t id);
 char* MyDLLFindPrevious(list *dll, uint16_t id);
 
 /**
- * @brief MyDLLDestroy frees the allocated memory of a spcific DLL
+ * @brief MyDLLDestroy frees the allocated memory of a specific DLL
  * 
  * This funtion frees the memory allocated when funtion MyDLLInit() is called
  * 
