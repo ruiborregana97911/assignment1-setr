@@ -1,0 +1,87 @@
+\doxysection{list Struct Reference}
+\hypertarget{structlist}{}\label{structlist}\index{list@{list}}
+
+
+Structure representing the Doubly Linked List (DLL)  
+
+
+
+
+{\ttfamily \#include $<$My\+DLL.\+h$>$}
+
+
+
+Collaboration diagram for list\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnode}{node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlist_a0c70ecc0a464c4e3d0a6195268f443f6}{nodelist}}
+\item 
+int \mbox{\hyperlink{structlist_a20358970b1abaf992eb85e071e454653}{head}}
+\item 
+int \mbox{\hyperlink{structlist_aff39d864a6594bc5f4a5e365282e00fe}{tail}}
+\item 
+int \mbox{\hyperlink{structlist_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}}
+\item 
+int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structlist_acc8d8dcfb7da887e63e64031ca528d3e}{available}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structlist_aa76307f7364a54c9b8378429453f84c5}{max\+\_\+size\+\_\+node}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structlist_a6f65f9497cebf1f7670626556b54b28d}{max\+\_\+size\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing the Doubly Linked List (DLL) 
+
+This structure contains all the elements, a reference to the first and last nodes, and a counter for the number of nodes in the list. It also maintains an availability array to track free nodes. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structlist_acc8d8dcfb7da887e63e64031ca528d3e}\label{structlist_acc8d8dcfb7da887e63e64031ca528d3e} 
+\index{list@{list}!available@{available}}
+\index{available@{available}!list@{list}}
+\doxysubsubsection{\texorpdfstring{available}{available}}
+{\footnotesize\ttfamily int\texorpdfstring{$\ast$}{*} available}
+
+Array to track free nodes (1 = free, 0 = occupied) \Hypertarget{structlist_ad43c3812e6d13e0518d9f8b8f463ffcf}\label{structlist_ad43c3812e6d13e0518d9f8b8f463ffcf} 
+\index{list@{list}!count@{count}}
+\index{count@{count}!list@{list}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int count}
+
+Number of nodes in the DLL \Hypertarget{structlist_a20358970b1abaf992eb85e071e454653}\label{structlist_a20358970b1abaf992eb85e071e454653} 
+\index{list@{list}!head@{head}}
+\index{head@{head}!list@{list}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily int head}
+
+Key of the first node in the DLL \Hypertarget{structlist_a6f65f9497cebf1f7670626556b54b28d}\label{structlist_a6f65f9497cebf1f7670626556b54b28d} 
+\index{list@{list}!max\_size\_data@{max\_size\_data}}
+\index{max\_size\_data@{max\_size\_data}!list@{list}}
+\doxysubsubsection{\texorpdfstring{max\_size\_data}{max\_size\_data}}
+{\footnotesize\ttfamily uint16\+\_\+t max\+\_\+size\+\_\+data}
+
+Maximum value assigned to the data array of each element \Hypertarget{structlist_aa76307f7364a54c9b8378429453f84c5}\label{structlist_aa76307f7364a54c9b8378429453f84c5} 
+\index{list@{list}!max\_size\_node@{max\_size\_node}}
+\index{max\_size\_node@{max\_size\_node}!list@{list}}
+\doxysubsubsection{\texorpdfstring{max\_size\_node}{max\_size\_node}}
+{\footnotesize\ttfamily uint16\+\_\+t max\+\_\+size\+\_\+node}
+
+Maximum number of elements assigned to the Doubly Linked List \Hypertarget{structlist_a0c70ecc0a464c4e3d0a6195268f443f6}\label{structlist_a0c70ecc0a464c4e3d0a6195268f443f6} 
+\index{list@{list}!nodelist@{nodelist}}
+\index{nodelist@{nodelist}!list@{list}}
+\doxysubsubsection{\texorpdfstring{nodelist}{nodelist}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}\texorpdfstring{$\ast$}{*} nodelist}
+
+Array of nodes in the list \Hypertarget{structlist_aff39d864a6594bc5f4a5e365282e00fe}\label{structlist_aff39d864a6594bc5f4a5e365282e00fe} 
+\index{list@{list}!tail@{tail}}
+\index{tail@{tail}!list@{list}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily int tail}
+
+Key of the last node in the DLL 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{MyDLL_8h}{My\+DLL.\+h}}\end{DoxyCompactItemize}

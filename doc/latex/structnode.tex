@@ -1,0 +1,59 @@
+\doxysection{node Struct Reference}
+\hypertarget{structnode}{}\label{structnode}\index{node@{node}}
+
+
+Structure representing a node in the doubly linked list.  
+
+
+
+
+{\ttfamily \#include $<$My\+DLL.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structnode_afb3b99084838a3689544c36dc65a6a16}{key}}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structnode_a91a70b77df95bd8b0830b49a094c2acb}{data}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structnode_af31772e7f4012fe83041e46a809b5a9b}{prev}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structnode_adf122b1cecb1d61c2696ba8ceb82a183}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing a node in the doubly linked list. 
+
+This structure contains a unique key assigned by the user to identify the node, a character array to store data, and references to the previous and next nodes in the list. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structnode_a91a70b77df95bd8b0830b49a094c2acb}\label{structnode_a91a70b77df95bd8b0830b49a094c2acb} 
+\index{node@{node}!data@{data}}
+\index{data@{data}!node@{node}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*} data}
+
+Data stored in the node \Hypertarget{structnode_afb3b99084838a3689544c36dc65a6a16}\label{structnode_afb3b99084838a3689544c36dc65a6a16} 
+\index{node@{node}!key@{key}}
+\index{key@{key}!node@{node}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily uint16\+\_\+t key}
+
+Unique node identifier \Hypertarget{structnode_adf122b1cecb1d61c2696ba8ceb82a183}\label{structnode_adf122b1cecb1d61c2696ba8ceb82a183} 
+\index{node@{node}!next@{next}}
+\index{next@{next}!node@{node}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily int16\+\_\+t next}
+
+Key of the next node (-\/1 for null) \Hypertarget{structnode_af31772e7f4012fe83041e46a809b5a9b}\label{structnode_af31772e7f4012fe83041e46a809b5a9b} 
+\index{node@{node}!prev@{prev}}
+\index{prev@{prev}!node@{node}}
+\doxysubsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily int16\+\_\+t prev}
+
+Key of the previous node (-\/1 for null) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\mbox{\hyperlink{MyDLL_8h}{My\+DLL.\+h}}\end{DoxyCompactItemize}

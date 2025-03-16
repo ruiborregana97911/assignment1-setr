@@ -1,0 +1,45 @@
+\doxysection{My\+DLL.\+h}
+\hypertarget{MyDLL_8h_source}{}\label{MyDLL_8h_source}\index{inc/MyDLL.h@{inc/MyDLL.h}}
+\mbox{\hyperlink{MyDLL_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_MyDLL\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_MyDLL\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structnode_afb3b99084838a3689544c36dc65a6a16}{key}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structnode_a91a70b77df95bd8b0830b49a094c2acb}{data}};\ \ }
+\DoxyCodeLine{00027\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structnode_af31772e7f4012fe83041e46a809b5a9b}{prev}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structnode_adf122b1cecb1d61c2696ba8ceb82a183}{next}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \}\ \mbox{\hyperlink{structnode}{node}};}
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structnode}{node}}\ *\mbox{\hyperlink{structlist_a0c70ecc0a464c4e3d0a6195268f443f6}{nodelist}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlist_a20358970b1abaf992eb85e071e454653}{head}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlist_aff39d864a6594bc5f4a5e365282e00fe}{tail}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structlist_ad43c3812e6d13e0518d9f8b8f463ffcf}{count}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{structlist_acc8d8dcfb7da887e63e64031ca528d3e}{available}};\ \ }
+\DoxyCodeLine{00044\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structlist_aa76307f7364a54c9b8378429453f84c5}{max\_size\_node}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structlist_a6f65f9497cebf1f7670626556b54b28d}{max\_size\_data}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \}\ \mbox{\hyperlink{structlist}{list}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MyDLL_8h_ac2d439759c2ead1b404adef4d10a6d29}{MyDLLInit}}(\mbox{\hyperlink{structlist}{list}}\ *dll,\ uint16\_t\ node\_size,\ uint16\_t\ data\_size);}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MyDLL_8h_a8953b23ab968c3b9e1851ec3e5befbb6}{MyDLLInsert}}(\mbox{\hyperlink{structlist}{list}}\ *dll,\ uint16\_t\ key,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *data);}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MyDLL_8h_af8d6f6d4bcade66a70589dff9a856709}{MyDLLRemove}}(\mbox{\hyperlink{structlist}{list}}\ *dll,\ uint16\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{MyDLL_8h_ad537238c30bd934f058f6434baf31c26}{MyDLLFind}}(\mbox{\hyperlink{structlist}{list}}\ *dll,\ uint16\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{MyDLL_8h_a5b71b0857c693b7fa513d5577f05dc36}{MyDLLFindNext}}(\mbox{\hyperlink{structlist}{list}}\ *dll,\ uint16\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{MyDLL_8h_a60c3b4b7ef2b59dadeb9a020bdce7f4b}{MyDLLFindPrevious}}(\mbox{\hyperlink{structlist}{list}}\ *dll,\ uint16\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MyDLL_8h_ae8b02f44f17de44e7ab53fd337b5457f}{MyDLLDestroy}}(\mbox{\hyperlink{structlist}{list}}\ *dll);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MyDLL_8h_a83ddc0fc112abb1df8de2f1f8ee3fa3a}{MyDLL\_print}}(\mbox{\hyperlink{structlist}{list}}\ *dll);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MyDLL_8h_a0f13c008fa39cc9314545bc7eae78a30}{MyDLLSort}}(\mbox{\hyperlink{structlist}{list}}\ *dll,\ \textcolor{keywordtype}{bool}\ ascending);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00148\ }
+
+\end{DoxyCode}
