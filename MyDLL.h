@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 /**
  * @struct node
@@ -128,6 +129,9 @@ void MyDLLDestroy(list *dll);
  */
 
 void MyDLL_print(list *dll);
+
+
+void MyDLLSort(list *dll, bool ascending);
 
 #endif
 

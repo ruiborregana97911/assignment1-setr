@@ -102,7 +102,22 @@ int main() {
     
     MyDLL_print(&myList);
     
+    printf("### Test 9: Testing sort function ###\n\n");
+    printf("Sorting in ascending order...\n");
+    MyDLLSort(&myList, true);
+    MyDLL_print(&myList);
     
+    printf("Removing some nodes and adding new ones\n\n");
+    MyDLLRemove(&myList, 33);
+    MyDLLRemove(&myList, 55);
+    MyDLLInsert(&myList, 78, "Ana");
+    MyDLLInsert(&myList, 200, "Pedro");
+    
+    MyDLL_print(&myList);
+    
+    printf("Sorting in descending order...\n");
+    MyDLLSort(&myList, false);
+    MyDLL_print(&myList);
     
     printf("\n### Test xx: Freeing allocated memory ###\n");
 	MyDLLDestroy(&myList);	

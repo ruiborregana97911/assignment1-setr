@@ -184,4 +184,50 @@ void MyDLL_print(list *dll){
 	printf("------------------------------\n\n");
 }
 
-
+void MyDLLSort(list *dll, bool ascending){
+	if(dll->count <=1){return;}	//list empty or just have  onde element
+	
+	for(int i=0; i < dll->count - 1; i++){
+		for(int j=0; j < dll->count - i - 1; j++){
+			int idx1 = j;
+			int idx2 = j + 1;
+			
+			//checks if swap is needed
+			if((ascending && dll->nodelist[idx1].key > dll->nodelist[idx2].key) || 
+			(!ascending && dll->nodelist[idx1].key < dll->nodelist[idx2].key)){
+				
+				//swapps elements
+				node aux= dll->nodelist[idx1];
+				dll->nodelist[idx1] = dll->nodelist[idx2];
+				dll->nodelist[idx2] = aux;
+			}	
+		}
+	}
+	
+	
+	//updates the indexes after sorting
+	for(int i=0;i < dll->count;i++){
+		if(i == 0) {
+			dll->nodelist[i].prev = -1;	//first element does not have a pervious
+			
+		} else{
+			dll->nodelist[i].prev = i - 1;
+			
+		}
+		
+		if(i == dll->count -1) {
+			dll->nodelist[i].next = -1;	//last element does not have a next
+			
+		} else{
+			dll->nodelist[i].next = i + 1;
+			
+		}
+	}
+	
+	//update head and tail
+	if(dll->count > 0){
+		dll->head = dll->nodelist[0].key;
+		dll->tail = dll->nodelist[dll->count - 1].key;
+	}
+	
+}
