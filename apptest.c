@@ -15,73 +15,68 @@
 
 int main() {
     list myList;
-    MyDLLInit(&myList, 10, 20);
+    MyDLLInit(&myList, 5, 20);
 
     // Check if initialization was successful
-    printf("Initial state:\n");
-    printf("Head: %d\n", myList.head);
-    printf("Tail: %d\n", myList.tail);
-    printf("Count: %d\n", myList.count);
+	printf("### Test 1: Initialization ###\n");
+	MyDLL_print(&myList);
     
     // Insert test nodes
+    printf("### Test 2: Insertion of elements ###\n");
     MyDLLInsert(&myList, 10, "ola");
     MyDLLInsert(&myList, 20, "bom");
     MyDLLInsert(&myList, 30, "dia");
     
     // Print list state after insertions
-    printf("\nAfter insertions:\n");
     MyDLL_print(&myList);
     
+    //Test Find
+    printf("### Test 3: Finding elements ###\n\n");
+    printf("Find(20): %s\n", MyDLLFind(&myList, 20));
+    printf("Find(80): %s\n", MyDLLFind(&myList, 80));	//Non existent
+    printf("\n");
+    
+    //Test FindNext and FindPrevious
+    printf("### Test 4: Finding elements ###\n\n");
+    printf("FindNext(10): %s\n", MyDLLFindNext(&myList, 10));
+    printf("FindNext(30): %s\n", MyDLLFindNext(&myList, 30));	//last element
+    printf("FindNext(80): %s\n", MyDLLFindNext(&myList, 80));	//Non existent
+    printf("\n");
+    printf("FindPrevious(30): %s\n", MyDLLFindPrevious(&myList, 30));
+    printf("FindPrevious(10): %s\n", MyDLLFindPrevious(&myList, 10));	//first element
+    printf("FindPrevious(80): %s\n", MyDLLFindPrevious(&myList, 80));	//Non existent
+    printf("\n");
+    
+
     // Remove a node
-    printf("\nRemoving Node with key 20...\n");
+    printf("### Test 5: Removing elements ###\n");
+    printf("\nRemoving Node with key 20\n");
+    
+    MyDLL_print(&myList);	//before removing
+    
     MyDLLRemove(&myList, 20);
     
     // Print list state after removal
-    printf("\nAfter removal:\n");
+    MyDLL_print(&myList);
+    
+    // Testing removing elements that dont exist
+    printf("### Test 6: Removing non existent elements ###\n");
+    printf("\nRemoving Node with key 80\n");
+    MyDLLRemove(&myList, 80);
+    MyDLL_print(&myList);
+    
+    // Removing first and last elements
+    printf("### Test 7: Removing first and last elements ###\n");
+    MyDLLRemove(&myList, 10);
+    MyDLLRemove(&myList, 30);
+    
     MyDLL_print(&myList);
     
     
-    // Insert test nodes
-    MyDLLInsert(&myList, 100, "cem");
-    MyDLLInsert(&myList, 230, "douzentos e trinta");
-    MyDLLInsert(&myList, 400, "quatrocentos");
     
-    
-    printf("\nFinding Node with key ??..\n");
-    char *data_tst = MyDLLFind(&myList, 1000);
-    
-    if(data_tst != NULL){
-		printf("Node data: %s\n", data_tst);
-		}
-
-
-    // Print list state after insertions
-    printf("\nAfter insertions:\n");
-	MyDLL_print(&myList);
-    
-    
-    data_tst = MyDLLFindNext(&myList, 400);
-   
-    
-    printf("\n");
-    if(data_tst != NULL){
-		printf("Node data: %s\n", data_tst);
-		}
-
-	data_tst = MyDLLFindPrevious(&myList, 10);
-
-    printf("\n");
-    if(data_tst != NULL){
-		printf("Node data: %s\n", data_tst);
-		}
-		
-		
-	MyDLL_print(&myList);	
-		
-		
+    printf("### Test xx: Freeing allocated memory ###\n");
 	MyDLLDestroy(&myList);	
     
-    printf("\n");
 	MyDLL_print(&myList);
     
     return 0;
