@@ -27,6 +27,12 @@ int main() {
     MyDLLInsert(&myList, 20, "bom");
     MyDLLInsert(&myList, 30, "dia");
     
+    MyDLL_print(&myList);
+    
+    printf("Addind repeated key...\n");
+    MyDLLInsert(&myList, 30, "noite");	//repeated key
+    
+    
     // Print list state after insertions
     MyDLL_print(&myList);
     
@@ -66,15 +72,29 @@ int main() {
     MyDLL_print(&myList);
     
     // Removing first and last elements
-    printf("### Test 7: Removing first and last elements ###\n");
+    printf("### Test 7: Removing first and last elements ###\n\n");
     MyDLLRemove(&myList, 10);
     MyDLLRemove(&myList, 30);
     
     MyDLL_print(&myList);
     
+    printf("### Test 8: Testing Limits of elements Insertion ###\n\n");
+    MyDLLInsert(&myList, 44, "Maria");
+    MyDLLInsert(&myList, 55, "Paulo");
+    MyDLLInsert(&myList, 33, "Joana");
+    MyDLLInsert(&myList, 100, "Rafael");
+    MyDLLInsert(&myList, 15, "Toni");
+    
+    MyDLL_print(&myList);
+    
+    printf("Adding extra element ...\n");
+    MyDLLInsert(&myList, 78, "Ana");	//extra element
+    
+    MyDLL_print(&myList);
     
     
-    printf("### Test xx: Freeing allocated memory ###\n");
+    
+    printf("\n### Test xx: Freeing allocated memory ###\n");
 	MyDLLDestroy(&myList);	
     
 	MyDLL_print(&myList);

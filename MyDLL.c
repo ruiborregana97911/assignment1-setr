@@ -41,6 +41,14 @@ void MyDLLInsert(list *dll, uint16_t key, const char *data) {
         return;
     }
     
+    //search for repeated keys
+    for(int i = 0; i < dll->max_size_node; i++){
+		if(dll->nodelist[i].key == key){
+			printf("Key already exists! \n");
+			return;
+		}	
+	}
+    
     // Find an available index
     int index = -1;
     for (int i = 0; i < dll->max_size_node; i++) {
