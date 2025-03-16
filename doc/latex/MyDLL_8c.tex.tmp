@@ -1,0 +1,85 @@
+\doxysection{src/\+My\+DLL.c File Reference}
+\hypertarget{MyDLL_8c}{}\label{MyDLL_8c}\index{src/MyDLL.c@{src/MyDLL.c}}
+{\ttfamily \#include "{}My\+DLL.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for My\+DLL.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{MyDLL_8c_ac2d439759c2ead1b404adef4d10a6d29}{My\+DLLInit}} (list \texorpdfstring{$\ast$}{*}dll, uint16\+\_\+t node\+\_\+size, uint16\+\_\+t data\+\_\+size)
+\item 
+void \mbox{\hyperlink{MyDLL_8c_a8953b23ab968c3b9e1851ec3e5befbb6}{My\+DLLInsert}} (list \texorpdfstring{$\ast$}{*}dll, uint16\+\_\+t key, const char \texorpdfstring{$\ast$}{*}data)
+\item 
+void \mbox{\hyperlink{MyDLL_8c_af8d6f6d4bcade66a70589dff9a856709}{My\+DLLRemove}} (list \texorpdfstring{$\ast$}{*}dll, uint16\+\_\+t id)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{MyDLL_8c_ad537238c30bd934f058f6434baf31c26}{My\+DLLFind}} (list \texorpdfstring{$\ast$}{*}dll, uint16\+\_\+t id)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{MyDLL_8c_a5b71b0857c693b7fa513d5577f05dc36}{My\+DLLFind\+Next}} (list \texorpdfstring{$\ast$}{*}dll, uint16\+\_\+t id)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{MyDLL_8c_a60c3b4b7ef2b59dadeb9a020bdce7f4b}{My\+DLLFind\+Previous}} (list \texorpdfstring{$\ast$}{*}dll, uint16\+\_\+t id)
+\item 
+void \mbox{\hyperlink{MyDLL_8c_ae8b02f44f17de44e7ab53fd337b5457f}{My\+DLLDestroy}} (list \texorpdfstring{$\ast$}{*}dll)
+\item 
+void \mbox{\hyperlink{MyDLL_8c_a83ddc0fc112abb1df8de2f1f8ee3fa3a}{My\+DLL\+\_\+print}} (list \texorpdfstring{$\ast$}{*}dll)
+\item 
+void \mbox{\hyperlink{MyDLL_8c_a0f13c008fa39cc9314545bc7eae78a30}{My\+DLLSort}} (list \texorpdfstring{$\ast$}{*}dll, bool ascending)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{MyDLL_8c_a83ddc0fc112abb1df8de2f1f8ee3fa3a}\label{MyDLL_8c_a83ddc0fc112abb1df8de2f1f8ee3fa3a} 
+\index{MyDLL.c@{MyDLL.c}!MyDLL\_print@{MyDLL\_print}}
+\index{MyDLL\_print@{MyDLL\_print}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLL\_print()}{MyDLL\_print()}}
+{\footnotesize\ttfamily void My\+DLL\+\_\+print (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll }\end{DoxyParamCaption})}
+
+\Hypertarget{MyDLL_8c_ae8b02f44f17de44e7ab53fd337b5457f}\label{MyDLL_8c_ae8b02f44f17de44e7ab53fd337b5457f} 
+\index{MyDLL.c@{MyDLL.c}!MyDLLDestroy@{MyDLLDestroy}}
+\index{MyDLLDestroy@{MyDLLDestroy}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLLDestroy()}{MyDLLDestroy()}}
+{\footnotesize\ttfamily void My\+DLLDestroy (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll }\end{DoxyParamCaption})}
+
+\Hypertarget{MyDLL_8c_ad537238c30bd934f058f6434baf31c26}\label{MyDLL_8c_ad537238c30bd934f058f6434baf31c26} 
+\index{MyDLL.c@{MyDLL.c}!MyDLLFind@{MyDLLFind}}
+\index{MyDLLFind@{MyDLLFind}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLLFind()}{MyDLLFind()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} My\+DLLFind (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll,  }\item[{uint16\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{MyDLL_8c_a5b71b0857c693b7fa513d5577f05dc36}\label{MyDLL_8c_a5b71b0857c693b7fa513d5577f05dc36} 
+\index{MyDLL.c@{MyDLL.c}!MyDLLFindNext@{MyDLLFindNext}}
+\index{MyDLLFindNext@{MyDLLFindNext}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLLFindNext()}{MyDLLFindNext()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} My\+DLLFind\+Next (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll,  }\item[{uint16\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{MyDLL_8c_a60c3b4b7ef2b59dadeb9a020bdce7f4b}\label{MyDLL_8c_a60c3b4b7ef2b59dadeb9a020bdce7f4b} 
+\index{MyDLL.c@{MyDLL.c}!MyDLLFindPrevious@{MyDLLFindPrevious}}
+\index{MyDLLFindPrevious@{MyDLLFindPrevious}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLLFindPrevious()}{MyDLLFindPrevious()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} My\+DLLFind\+Previous (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll,  }\item[{uint16\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{MyDLL_8c_ac2d439759c2ead1b404adef4d10a6d29}\label{MyDLL_8c_ac2d439759c2ead1b404adef4d10a6d29} 
+\index{MyDLL.c@{MyDLL.c}!MyDLLInit@{MyDLLInit}}
+\index{MyDLLInit@{MyDLLInit}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLLInit()}{MyDLLInit()}}
+{\footnotesize\ttfamily void My\+DLLInit (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll,  }\item[{uint16\+\_\+t}]{node\+\_\+size,  }\item[{uint16\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{MyDLL_8c_a8953b23ab968c3b9e1851ec3e5befbb6}\label{MyDLL_8c_a8953b23ab968c3b9e1851ec3e5befbb6} 
+\index{MyDLL.c@{MyDLL.c}!MyDLLInsert@{MyDLLInsert}}
+\index{MyDLLInsert@{MyDLLInsert}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLLInsert()}{MyDLLInsert()}}
+{\footnotesize\ttfamily void My\+DLLInsert (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll,  }\item[{uint16\+\_\+t}]{key,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{MyDLL_8c_af8d6f6d4bcade66a70589dff9a856709}\label{MyDLL_8c_af8d6f6d4bcade66a70589dff9a856709} 
+\index{MyDLL.c@{MyDLL.c}!MyDLLRemove@{MyDLLRemove}}
+\index{MyDLLRemove@{MyDLLRemove}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLLRemove()}{MyDLLRemove()}}
+{\footnotesize\ttfamily void My\+DLLRemove (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll,  }\item[{uint16\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+\Hypertarget{MyDLL_8c_a0f13c008fa39cc9314545bc7eae78a30}\label{MyDLL_8c_a0f13c008fa39cc9314545bc7eae78a30} 
+\index{MyDLL.c@{MyDLL.c}!MyDLLSort@{MyDLLSort}}
+\index{MyDLLSort@{MyDLLSort}!MyDLL.c@{MyDLL.c}}
+\doxysubsubsection{\texorpdfstring{MyDLLSort()}{MyDLLSort()}}
+{\footnotesize\ttfamily void My\+DLLSort (\begin{DoxyParamCaption}\item[{list \texorpdfstring{$\ast$}{*}}]{dll,  }\item[{bool}]{ascending }\end{DoxyParamCaption})}
+
