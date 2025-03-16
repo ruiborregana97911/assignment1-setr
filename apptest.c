@@ -65,6 +65,10 @@ int main() {
     // Print list state after removal
     MyDLL_print(&myList);
     
+    printf("FindNext(10) after removing 20: %s\n", MyDLLFindNext(&myList, 10));
+	printf("FindPrevious(30) after removing 20: %s\n", MyDLLFindPrevious(&myList, 30));
+
+    
     // Testing removing elements that dont exist
     printf("### Test 6: Removing non existent elements ###\n");
     printf("\nRemoving Node with key 80\n");
