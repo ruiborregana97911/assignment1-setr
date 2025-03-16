@@ -130,6 +130,17 @@ void MyDLLDestroy(list *dll);
 
 void MyDLL_print(list *dll);
 
+/**
+ * @brief Sorts the nodes of a doubly linked list in ascending or descending order.
+ * 
+ * This function uses the Bubble Sort algorithm to sort the nodes of the doubly 
+ * linked list based on the 'key' field of each node. The sorting order is 
+ * determined by the 'ascending' parameter. If 'ascending' is true, the list is 
+ * sorted in ascending order; otherwise, it is sorted in descending order.
+ * 
+ * @param[in] *dll Pointer to the DLL
+ * @param[in] ascending A boolean value determining the sorting order. 
+ */
 
 void MyDLLSort(list *dll, bool ascending);
 
