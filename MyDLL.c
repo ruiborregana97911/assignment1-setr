@@ -226,8 +226,8 @@ void MyDLLSort(list *dll, bool ascending){
 	
 	//update head and tail
 	if(dll->count > 0){
-		dll->head = dll->nodelist[0].key;
-		dll->tail = dll->nodelist[dll->count - 1].key;
+		dll->head = 0;
+		dll->tail = dll->count - 1;
 	}
 	
 }

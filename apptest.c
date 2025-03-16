@@ -110,6 +110,7 @@ int main() {
     printf("Removing some nodes and adding new ones\n\n");
     MyDLLRemove(&myList, 33);
     MyDLLRemove(&myList, 55);
+    
     MyDLLInsert(&myList, 78, "Ana");
     MyDLLInsert(&myList, 200, "Pedro");
     
