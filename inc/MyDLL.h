@@ -5,7 +5,7 @@
  * 
  * @authors Henrique Ferreira\n Rui Borregana
  * @date 12 Mar 2025
- * @bug -------------rever no fim-------------
+ * @bug none
  */
 #ifndef _MyDLL_H
 #define _MyDLL_H

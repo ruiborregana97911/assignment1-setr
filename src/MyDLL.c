@@ -15,24 +15,42 @@
 
 
 void MyDLLInit(list *dll, uint16_t node_size, uint16_t data_size) {
-    
     dll->max_size_node = node_size;
     dll->max_size_data = data_size;
     
     dll->nodelist = malloc(node_size * sizeof(node));
-    dll->available = malloc(node_size * sizeof(int));
+    if (!dll->nodelist) {
+        printf("Memory allocation failed for nodelist!\n");
+        return;
+    }
     
-    for(int i=0; i < node_size; i++){
-		dll->nodelist[i].prev = -1;
+    dll->available = malloc(node_size * sizeof(int));
+    if (!dll->available) {
+        printf("Memory allocation failed for available list!\n");
+        free(dll->nodelist);
+        return;
+    }
+    
+    for (int i = 0; i < node_size; i++) {
+        dll->nodelist[i].prev = -1;
         dll->nodelist[i].next = -1;
-        dll->available[i] = 1;  // Mark all nodes as available
+        dll->available[i] = 1;  // Marca todos os nós como disponíveis
+        
         dll->nodelist[i].data = malloc(data_size * sizeof(char));
-	}
+        if (!dll->nodelist[i].data) {
+            printf("Memory allocation failed for node data at index %d!\n", i);
+            for (int j = 0; j < i; j++) {
+                free(dll->nodelist[j].data);
+            }
+            free(dll->nodelist);
+            free(dll->available);
+            return;
+        }
+    }
     
     dll->head = -1;
     dll->tail = -1;
     dll->count = 0;
-
 }
 
 void MyDLLInsert(list *dll, uint16_t key, const char *data) {
