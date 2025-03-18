@@ -120,11 +120,26 @@ int main() {
     MyDLLSort(&myList, false);
     MyDLL_print(&myList);
     
-    printf("Trying tp remove 1 node adding 2 nodes ...\n");
+    
+    
+    
+    
+    
+        printf("Trying tp remove 1 node adding 2 nodes ...\n");
     MyDLLRemove(&myList, 100);
     MyDLLInsert(&myList, 100, "Rafael_V2");
     MyDLLInsert(&myList, 111, "Rafael_V3");
+    MyDLL_print(&myList);
     
+    
+    
+    
+    
+    
+    
+    
+    
+
     printf("\n### Last Test: Freeing allocated memory ###\n");
 	MyDLLDestroy(&myList);	
     

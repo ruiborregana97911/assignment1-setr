@@ -7,8 +7,7 @@ DOC_DIR = doc
 # Ficheiros
 TARGET = apptest
 SOURCES = $(SRC_DIR)/apptest.c $(SRC_DIR)/MyDLL.c
-OBJECTS = $(OBJ_DIR)/apptest.o $(OBJ_DIR)/MyDLL.o
-HEADERS = $(INC_DIR)/MyDLL.h
+OBJECTS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
 CFLAGS = -g -Wall -O3 -I$(INC_DIR)
 LDLIBS =
 CC = gcc
@@ -20,7 +19,7 @@ $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $(OBJECTS)
 
 # Geração dos ficheiros objeto
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/%.h | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Criar diretório obj se não existir
