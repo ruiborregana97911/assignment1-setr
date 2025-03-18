@@ -59,15 +59,15 @@ void MyDLLInsert(list *dll, uint16_t key, const char *data) {
         return;
     }
     
-    //search for repeated keys
-    for(int i = 0; i < dll->max_size_node; i++){
-		if(dll->nodelist[i].key == key){
-			printf("Key already exists! \n");
-			return;
-		}	
-	}
+    // Buscar se a chave já existe, considerando apenas nós ocupados
+    for (int i = 0; i < dll->max_size_node; i++) {
+        if (dll->available[i] == 0 && dll->nodelist[i].key == key) {
+            printf("Key already exists! \n");
+            return;
+        }
+    }
     
-    // Find an available index
+    // Encontrar um índice disponível
     int index = -1;
     for (int i = 0; i < dll->max_size_node; i++) {
         if (dll->available[i] == 1) {
@@ -81,18 +81,18 @@ void MyDLLInsert(list *dll, uint16_t key, const char *data) {
         return;
     }
     
-    // Initialize the new node
+    // Inicializar o novo nó
     dll->nodelist[index].key = key;
     strncpy(dll->nodelist[index].data, data, dll->max_size_data);
     dll->nodelist[index].prev = -1;
     dll->nodelist[index].next = -1;
-    dll->available[index] = 0; // Mark as occupied
+    dll->available[index] = 0; // Marcar como ocupado
     
-    // Insert into the list
-    if (dll->head == -1) { // Empty list case
+    // Inserir na lista
+    if (dll->head == -1) { // Lista vazia
         dll->head = index;
         dll->tail = index;
-    } else { // Append to the end
+    } else { // Adicionar ao final
         dll->nodelist[dll->tail].next = index;
         dll->nodelist[index].prev = dll->tail;
         dll->tail = index;
