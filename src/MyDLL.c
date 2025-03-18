@@ -5,7 +5,7 @@
  * 
  * @authors Henrique Ferreira\n Rui Borregana
  * @date 12 Mar 2025
- * @bug -------------rever no fim-------------
+ * @bug none
  */
 #include "MyDLL.h"
 #include <string.h>
@@ -179,18 +179,26 @@ char* MyDLLFindPrevious(list *dll, uint16_t id){
 }
 
 void MyDLLDestroy(list *dll){
-	
-	for(int i=0; i < dll->max_size_node; i++){
-		free(dll->nodelist[i].data);	
-	}	
-	free(dll->nodelist);
-	free(dll->available);
-	
-	dll->head = -1;
+    if (!dll) return; // Proteção contra ponteiro nulo
+
+    for(int i = 0; i < dll->max_size_node; i++){
+        if (dll->nodelist[i].data) {
+            free(dll->nodelist[i].data);
+            dll->nodelist[i].data = NULL;
+        }
+    }
+
+    free(dll->nodelist);
+    dll->nodelist = NULL;
+
+    free(dll->available);
+    dll->available = NULL;
+
+    dll->head = -1;
     dll->tail = -1;
     dll->count = 0;
-	
 }
+
 
 void MyDLL_print(list *dll){
 	printf("\n----- Doubly Linked List -----\n");		
