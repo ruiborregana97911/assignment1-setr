@@ -5,7 +5,7 @@
  * 
 * @authors Henrique Ferreira\n Rui Borregana
  * @date 12 Mar 2025
- * @bug -------------rever no fim-------------
+ * @bug after MyDLLDestroy() it leaves some residual behind
  */
 
 #include "MyDLL.h"
@@ -120,10 +120,16 @@ int main() {
     MyDLLSort(&myList, false);
     MyDLL_print(&myList);
     
-    printf("\n### Test xx: Freeing allocated memory ###\n");
+    printf("Trying tp remove 1 node adding 2 nodes ...\n");
+    MyDLLRemove(&myList, 100);
+    MyDLLInsert(&myList, 100, "Rafael_V2");
+    MyDLLInsert(&myList, 111, "Rafael_V3");
+    
+    printf("\n### Last Test: Freeing allocated memory ###\n");
 	MyDLLDestroy(&myList);	
     
 	MyDLL_print(&myList);
+	
     
     return 0;
 }

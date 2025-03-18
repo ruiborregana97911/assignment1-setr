@@ -186,6 +186,10 @@ void MyDLLDestroy(list *dll){
 	free(dll->nodelist);
 	free(dll->available);
 	
+	dll->head = -1;
+    dll->tail = -1;
+    dll->count = 0;
+	
 }
 
 void MyDLL_print(list *dll){
